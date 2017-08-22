@@ -1,13 +1,11 @@
-import React, {Component} from 'react';
-import {HashRouter, Route} from 'react-router-dom';
-import AllArtists from './AllArtists';
-import SingleArtist from './SingleArtist';
-
-
-import AllAlbums from './AllAlbums';
-import SingleAlbum from './SingleAlbum';
-import Sidebar from './Sidebar';
-import Player from './Player';
+import React, { Component } from 'react'
+import { HashRouter, Route } from 'react-router-dom'
+import AllArtists from './AllArtists'
+import SingleArtist from './SingleArtist'
+import AllAlbums from './AllAlbums'
+import SingleAlbum from './SingleAlbum'
+import Sidebar from './Sidebar'
+import Player from './Player'
 
 export default class Main extends Component {
 
@@ -33,6 +31,6 @@ export default class Main extends Component {
 					<Player/>
 				</div>
 			</HashRouter>
-		);
+		)
 	}
 }

@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import axios from 'axios';
+import React, {Component} from 'react'
+import axios from 'axios'
 import {Link} from 'react-router-dom'
 
 export default class AllArtists extends Component {
 	constructor(props) {
-		super();
+		super()
 		this.state = {
 			artists: [],
 		}
@@ -15,12 +15,13 @@ export default class AllArtists extends Component {
 			.then(res => res.data)
 			.then(artists => {
 				this.setState({artists})
-			});
+			})
+
 	}
 
 	render() {
 		// console.log(this.props)
-		const artists = this.state.artists;
+		const artists = this.state.artists
 
 		return (
 			<div>
@@ -38,6 +39,6 @@ export default class AllArtists extends Component {
 					}
 				</div>
 			</div>
-		);
+		)
 	}
 }

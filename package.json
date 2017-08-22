@@ -17,6 +17,7 @@
     "bootstrap": "^3.3.5",
     "chalk": "^1.0.0",
     "commander": "^2.9.0",
+    "eslint-config-react": "^1.1.7",
     "express": "^4.12.0",
     "fs-misc": "^2.0.0",
     "itunes-library-stream": "^0.0.0",
@@ -44,7 +45,9 @@
     "babel-preset-react": "^6.22.0",
     "chai": "3.5.0",
     "chai-spies": "0.7.1",
+    "eslint": "^4.5.0",
     "eslint-config-google": "^0.9.1",
+    "eslint-plugin-react": "^7.3.0",
     "mocha": "^2.5.1",
     "testem": "1.2.2",
     "webpack": "^2.2.1"
