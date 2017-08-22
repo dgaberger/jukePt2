@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Songs from './Songs'
 import Artist from './SingleArtist'
-import Album from './SingleAlbum'
+import DisplayAlbums from './DisplayAlbums'
 
 
 export default class SingleArtist extends Component {
@@ -31,25 +31,18 @@ export default class SingleArtist extends Component {
 			.then(albums => this.setState({
 				selectedAlbums: albums
 			}))
-			.then((info) => {
-				console.log(info)
-				console.log(this.state.selectedSongs,this.state.selectedArtist ,this.state.selectedAlbums)
-			})
-		this.state.selectedSongs.bind(this)
-		this.state.selectedArtist.bind(this)
-		this.state.selectedAlbums.bind(this)
-
 	}
 
 	render() {
 		const artist = this.state.selectedArtist
+		const albums = this.state.selectedAlbums
 		return (
 			<div>
 				<h3>{artist.name}</h3>
 				<h4>ALBUMS</h4>
+				<DisplayAlbums albums={albums}/>
+				<h4>SONGS</h4>
 				<Songs songs={this.state.selectedSongs}/>
-				{/*<Artist artist={this.state.selectedArtist}/>*/}
-				{/*<Album album={this.state.selectedAlbums}/>*/}
 			</div>
 		)
 	}

@@ -17,6 +17,7 @@ const Artist = db.define('artist', {
 
 Artist.prototype.getAlbums = function () {
   return db.model('album').findAll({
+    where: {artistId: this.id},
     include: [{
       model: db.model('song'),
       include: [{
@@ -24,7 +25,7 @@ Artist.prototype.getAlbums = function () {
         where: { id: this.id } // makes this entire query an inner join
       }]
     }]
-  });
+  })
 }
 
 Artist.prototype.toJSON = function () {
