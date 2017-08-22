@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 export default class AllAlbums extends Component {
-	constructor( props ) {
+	constructor() {
 		super()
 		this.state = {
 			albums: [],

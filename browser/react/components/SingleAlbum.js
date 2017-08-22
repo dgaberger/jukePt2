@@ -20,7 +20,6 @@ export default class SingleAlbum extends Component {
 	}
 
 	render () {
-		// console.log(this.props.match.params)
 		const album = this.state.selectedAlbum
 
 		return (

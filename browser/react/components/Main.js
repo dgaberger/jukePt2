@@ -10,10 +10,6 @@ import Player from './Player'
 
 export default class Main extends Component {
 
-	// constructor (props) {
-	//   super();
-	// }
-
 	render() {
 		return (
 			<HashRouter>

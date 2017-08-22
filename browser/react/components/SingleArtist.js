@@ -7,16 +7,16 @@ import DisplayAlbums from './DisplayAlbums'
 
 
 export default class SingleArtist extends Component {
-	constructor( props ) {
+	constructor() {
 		super()
 		this.state = {
 			selectedArtist: {}, selectedAlbums: [], selectedSongs: []
-
 		}
 	}
 
 	componentDidMount() {
 		const artistId = this.props.match.params.artistId
+
 		axios.get(`/api/artists/${artistId}`)
 			.then(res => res.data)
 			.then(artist => this.setState({
@@ -36,8 +36,8 @@ export default class SingleArtist extends Component {
 
 	render () {
 
-	  const artist = this.state.selectedArtist; // or however you've named it
-	  const albums = this.state.selectedAlbums //
+	  const artist = this.state.selectedArtist
+	  const albums = this.state.selectedAlbums 
 	  const songs = this.state.selectedSongs
 
 	  return (
@@ -51,8 +51,8 @@ export default class SingleArtist extends Component {
 		      <Route path="/artists/:artistId/albums" render={() => <DisplayAlbums albums={albums} /> } />
 		      <Route path="/artists/:artistId/songs" render={() => <Songs songs={songs} /> } />
 		    </div>
-		</HashRouter>
-	  );
+			</HashRouter>
+	  )
 	}
 }
 

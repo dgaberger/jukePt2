@@ -16,7 +16,6 @@ export default class AllArtists extends Component {
 			.then(artists => {
 				this.setState({artists})
 			})
-
 	}
 
 	render() {
