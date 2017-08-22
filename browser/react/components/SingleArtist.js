@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { HashRouter, Link , Route } from 'react-router-dom'
+
 import Songs from './Songs'
-import Artist from './SingleArtist'
 import DisplayAlbums from './DisplayAlbums'
 
 
@@ -33,24 +34,25 @@ export default class SingleArtist extends Component {
 			}))
 	}
 
-	render() {
-		const artist = this.state.selectedArtist
-		const albums = this.state.selectedAlbums
-		return (
-			<div>
-				<h3>{artist.name}</h3>
-				<h4>ALBUMS</h4>
-				<DisplayAlbums albums={albums}/>
-				<h4>SONGS</h4>
-				<Songs songs={this.state.selectedSongs}/>
-			</div>
-		)
+	render () {
+
+	  const artist = this.state.selectedArtist; // or however you've named it
+	  const albums = this.state.selectedAlbums //
+	  const songs = this.state.selectedSongs
+
+	  return (
+	  	<HashRouter>
+		    <div>
+		      <h3>{ artist.name }</h3>
+		      <ul className="nav nav-tabs">
+		        <li><Link to={`/artists/${artist.id}/albums`}>ALBUMS</Link></li>
+		        <li><Link to={`/artists/${artist.id}/songs`}>SONGS</Link></li>
+		      </ul>
+		      <Route path="/artists/:artistId/albums" render={() => <DisplayAlbums albums={albums} /> } />
+		      <Route path="/artists/:artistId/songs" render={() => <Songs songs={songs} /> } />
+		    </div>
+		</HashRouter>
+	  );
 	}
 }
-// this.state.artists.map(artist => {
-// 	return (
-// 		<div className="list-group-item" key={artist.id}>
-// 			{/* determine where to actually Link to later! */}
-// 			<Link to={`/artists/${artist.id}`}>{artist.name}</Link>
-// 		</div>
 

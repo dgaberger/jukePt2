@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 const DisplayAlbums = (props) => {
 	const albums = props.albums
-
 	return (
 		<div>
 			<h3>Albums</h3>

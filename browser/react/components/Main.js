@@ -7,6 +7,7 @@ import SingleAlbum from './SingleAlbum'
 import Sidebar from './Sidebar'
 import Player from './Player'
 
+
 export default class Main extends Component {
 
 	// constructor (props) {
@@ -21,11 +22,11 @@ export default class Main extends Component {
 						<Sidebar deselectAlbum={this.deselectAlbum}/>
 					</div>
 					<div className="col-xs-10">
-						<Route exact path="/" component={AllAlbums}/>
-						<Route exact path="/albums" component={AllAlbums}/>
+						<Route path="/artists/:artistId" component={SingleArtist}/>
 						<Route exact path="/albums/:albumId" component={SingleAlbum}/>
+						<Route exact path="/albums" component={AllAlbums}/>
 						<Route exact path="/artists/" component={AllArtists}/>
-						<Route exact path="/artists/:artistId" component={SingleArtist}/>
+						<Route exact path="/" component={AllAlbums}/>
 					</div>
 
 					<Player/>
